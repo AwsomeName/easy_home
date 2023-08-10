@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ad^5_m$oxt^(&x%m94ecr-lohf%(hf)_cwytqcvdt!d8*^ctw='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -88,7 +88,7 @@ DATABASES = {
         'HOST': '127.0.0.1', # 数据库地址，本机 ip 地址 127.0.0.1 
         'PORT': 3306, # 端口 
         'USER': 'lc',  # 数据库用户名
-        'PASSWORD': 'Mind1self!', # 数据库密码
+        'PASSWORD': 'Abc12345', # 数据库密码
     }  
 }
 
@@ -130,9 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATIC_ROOT = "static_root"
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+#     # "/root/easy_home/homesite/static"
+# )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

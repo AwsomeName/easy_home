@@ -20,7 +20,7 @@ Including another URLconf
 #     path('admin/', admin.site.urls),
 # ]
 
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 from . import doc_views
 from django.conf import settings
@@ -32,6 +32,9 @@ urlpatterns = [
     path('home/', views.home),
     path('doc/', doc_views.home),
     path('favicon.ico', serve, {'path': 'img/favicon.ico'}),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+    # re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+
+]
+# ]+ static(settings.STATIC_URL, document_root=settings.STATIC_URL)
 
 
